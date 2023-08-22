@@ -1,9 +1,11 @@
 import { Button, Card, TextField, Typography } from "@mui/material"
-import axios from "axios";
 import { useState } from "react";
-export async function Signup (props:{
+
+
+
+export function Signup (props:{
     
-    onClick:(username:string, password:string)=> void
+    onClick:(username:string,email:string, password:string)=> void
 }){
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -48,7 +50,7 @@ export async function Signup (props:{
                         size="large"
                         variant="contained"
                         onClick={async()=>{
-                          props.onClick(username, password)
+                          props.onClick(username,email, password)
                         }}
                     >
                         Sign in

@@ -5,23 +5,20 @@ const { Schema } = mongoose;
 const userSchema = new Schema({
     username: String ,
     password: String,
+    email: String,
     purchasedProducts: [{ 
         imageLink: String,
-      price: Number,
-      description: String,
-      title: String,
-      
-     }],
-    cart: [{
-      imageLink: String,
-      price: Number,
-      description: String,
-      title: String,
-      
+        price: Number,
+        description: String,
+        title: String,
     }],
-    email: String
+    cart: [{
+        imageLink: String,
+        price: Number,
+        description: String,
+        title: String,
+    }],
 });
-
 
 const productSchema = new Schema({
     title: {
@@ -39,10 +36,9 @@ const productSchema = new Schema({
         type: String,
         required: true
     }
-   
 });
 
-productSchema.index({name:'text', description:'text', price:'text'})
+productSchema.index({ name: 'text', description: 'text', price: 'text' });
 
 const adminSchema = new Schema({
     username: String,

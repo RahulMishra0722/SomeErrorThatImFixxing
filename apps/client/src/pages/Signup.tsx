@@ -4,10 +4,11 @@ import axios from "axios";
 export default function SignUpPage (){
     return(
         <>
-       <Signup onClick={async(username, password)=>{
+       <Signup onClick={async(username, password,email)=>{
          await axios.post('/api/Signup',{
             username,
-            password
+            password,
+            email
         })
        }}
        ></Signup>
